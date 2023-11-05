@@ -12,7 +12,7 @@ string.}
 }
 \value{
 A numeric vector with the found elements as names and their number of
-occurrence.
+occurrence. This vector is ordered by the names of the elements
 }
 \description{
 Counts the elements occurring in a given chemical formula. The formula is
@@ -22,6 +22,7 @@ split into their elements using a regular expression.
   countElementsInFormula('Mg2(SiO4)')
   countElementsInFormula('CaMgSi2O6')
   countElementsInFormula('Mg3Al2(SiO4)3')
+  countElementsInFormula('NaMg3Al6(Si6O18)(BO3)3(OH)3(OH)')
 
 }
 \references{

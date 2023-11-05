@@ -1,7 +1,7 @@
 Package: hularr
 Type: Package
 Title: Happily Used Little R Routines
-Version: 0.1.0
+Version: 0.1.1.9000
 Authors@R: 
     person("Gerald", "Schuberth-Hlavač", email= "abuseki@synapticgap.com",
       role = c("aut", "cre"))

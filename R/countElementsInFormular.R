@@ -7,7 +7,7 @@
 #'   string.
 #'
 #' @return A numeric vector with the found elements as names and their number of
-#'   occurrence.
+#'   occurrence. This vector is ordered by the names of the elements
 #'
 #' @references The regular expression used herein was found on
 #'   <https://regex101.com/r/vE6nC7/1>
@@ -16,6 +16,7 @@
 #'   countElementsInFormula('Mg2(SiO4)')
 #'   countElementsInFormula('CaMgSi2O6')
 #'   countElementsInFormula('Mg3Al2(SiO4)3')
+#'   countElementsInFormula('NaMg3Al6(Si6O18)(BO3)3(OH)3(OH)')
 #'
 #' @export
 countElementsInFormula <- function(fmla) {
@@ -30,7 +31,7 @@ countElementsInFormula <- function(fmla) {
   subs <- which(mm[2,] == "")
   if(length(subs) != 0) {
     # handle sub formulas
-    lsub <- lapply(subs, function(i) countElementsInFormula(mm[4, i]) * as.numeric(mm[5, i]))[[1]]
+    lsub <- unlist(lapply(subs, function(i) countElementsInFormula(mm[4, i]) * as.numeric(mm[5, i])))
 
     els <- as.numeric(mm[3,-subs])
     names(els) <- mm[2, -subs]
@@ -46,5 +47,8 @@ countElementsInFormula <- function(fmla) {
   els[which(is.na(els))] <- 1
 
   # sum up elements, since sub formulas can have the same elements
-  unlist(lapply(split(els, names(els)), sum))
+  l <- unlist(lapply(split(els, names(els)), sum))
+
+  # guarrantee list is ordered my names of list elemenst
+  l[order(names(l))]
 }
