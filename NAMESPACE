@@ -3,4 +3,5 @@
 export(countElementsInFormula)
 export(polyarea)
 export(ppm2wt)
+export(which.nonnumeric)
 export(wt2ppm)
