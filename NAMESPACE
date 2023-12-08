@@ -2,6 +2,9 @@
 
 export(cm2in)
 export(countElementsInFormula)
+export(dist.chebyshev)
+export(dist.euclidean)
+export(dist.manhattan)
 export(in2cm)
 export(pixel4dpi)
 export(polyarea)
