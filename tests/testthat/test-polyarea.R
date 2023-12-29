@@ -1,4 +1,4 @@
-test_that("polyare works", {
+test_that("polyarea works", {
 
   p <- matrix(c(0,2,0, 0,0,2), ncol=2)
   expect_equal(polyarea(p), 2)
