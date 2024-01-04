@@ -20,22 +20,25 @@
 #' @export
 #'
 #' @examples
-#'   # Water
-#'   mass("H2O")
+#' # Water
+#' mass("H2O")
 #'
-#'   # antigorite
-#'   mass("Mg3Si2O5(OH)4")
+#' # antigorite
+#' mass("Mg3Si2O5(OH)4")
 #'
-#'   # muscovite
-#'   mass("KAl2(Si3Al)O10(OH)2")
+#' # muscovite
+#' mass("KAl2(Si3Al)O10(OH)2")
+#'
+#' # Si wt% in muscovite
+#' round(mass("Si3")/mass("KAl2(Si3Al)O10(OH)2") *100, 2)
 #'
 mass <- function(fmla,
                  aws= setNames(georefdatar::IUPAC_StdAW$`abrStdAW::Value`,
                               georefdatar::IUPAC_StdAW$Symbol)) {
-  # count elements in formular
+  # count elements in formula
   neif <- hularr::countElementsInFormula(fmla)
 
-  # calcuate mass of formular
+  # calculate mass of formula
   sum(aws[names(neif)] * neif)
 }
 

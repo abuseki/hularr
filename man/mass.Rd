@@ -26,14 +26,17 @@ Calculates the relative molecular mass aka molecular weight of a given
 chemical formula.
 }
 \examples{
-  # Water
-  mass("H2O")
+# Water
+mass("H2O")
 
-  # antigorite
-  mass("Mg3Si2O5(OH)4")
+# antigorite
+mass("Mg3Si2O5(OH)4")
 
-  # muscovite
-  mass("KAl2(Si3Al)O10(OH)2")
+# muscovite
+mass("KAl2(Si3Al)O10(OH)2")
+
+# Si wt\% in muscovite
+round(mass("Si3")/mass("KAl2(Si3Al)O10(OH)2") *100, 2)
 
 }
 \seealso{
