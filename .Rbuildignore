@@ -4,3 +4,4 @@
 ^README\.Rmd$
 ^TODO.md$
 ^data-raw$
+^\.github$
